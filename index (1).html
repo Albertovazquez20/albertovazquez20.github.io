@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alberto Vázquez Rando</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0f0e1a;--bg2:#1a1830;--bg3:#231f3a;
+  --c1:#7F77DD;--c2:#534AB7;
+  --txt:#f0effe;--txt2:#b0a8f0;--txt3:#7f77dd;
+  --border:rgba(127,119,221,0.2);
+  --nav-h:56px;
+}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;padding-top:var(--nav-h)}
+a{color:var(--c1);text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(15,14,26,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 40px}
+.nav-logo{font-size:15px;font-weight:600;color:var(--txt)}
+.nav-logo span{color:var(--c1)}
+.nav-links{display:flex;gap:4px}
+.nav-links a{font-size:13px;color:var(--txt2);padding:6px 14px;border-radius:6px;transition:background 0.2s,color 0.2s}
+.nav-links a:hover,.nav-links a.active{background:rgba(127,119,221,0.15);color:var(--c1)}
+.hero{padding:80px 40px 50px;max-width:860px;margin:0 auto;text-align:center}
+.avatar{width:88px;height:88px;border-radius:50%;background:var(--bg3);border:2px solid var(--c1);display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:600;color:var(--c1);margin:0 auto 24px}
+.hero h1{font-size:34px;font-weight:600;margin-bottom:8px}
+.hero h1 span{color:var(--c1)}
+.tag{display:inline-block;background:rgba(127,119,221,0.15);border:1px solid var(--border);color:var(--txt2);font-size:13px;padding:4px 16px;border-radius:20px;margin-bottom:24px}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.btn-p{background:var(--c1);color:#fff;padding:10px 24px;border-radius:8px;font-size:14px;font-weight:500}
+.btn-p:hover{background:var(--c2);color:#fff}
+.btn-o{border:1px solid var(--border);color:var(--txt2);padding:10px 24px;border-radius:8px;font-size:14px}
+.btn-o:hover{border-color:var(--c1);color:var(--c1)}
+section{padding:50px 40px;max-width:860px;margin:0 auto;scroll-margin-top:calc(var(--nav-h) + 16px)}
+.sec-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--txt3);margin-bottom:24px;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.sobre-mi{color:var(--txt2);font-size:15px;line-height:1.8;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px 28px}
+.edu-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}
+.edu-item:last-child{border-bottom:none}
+.edu-dot{width:40px;height:40px;border-radius:8px;background:rgba(127,119,221,0.15);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.edu-title{font-size:15px;font-weight:600;margin-bottom:2px}
+.edu-sub{font-size:13px;color:var(--txt2);margin-bottom:4px}
+.edu-date{font-size:12px;color:var(--txt3)}
+.skills-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.skills-group h4{font-size:13px;color:var(--txt3);margin-bottom:12px;font-weight:500}
+.skills-wrap{display:flex;flex-wrap:wrap;gap:8px}
+.skill{background:var(--bg3);border:1px solid var(--border);color:var(--txt2);padding:5px 14px;border-radius:6px;font-size:12px;transition:border-color 0.2s,color 0.2s}
+.skill:hover{border-color:var(--c1);color:var(--c1)}
+.project-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:28px;margin-bottom:16px;transition:border-color 0.2s}
+.project-card:hover{border-color:var(--c1)}
+.proj-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+.proj-title{font-size:17px;font-weight:600}
+.proj-badge{background:rgba(127,119,221,0.15);border:1px solid var(--border);color:var(--txt3);font-size:11px;padding:3px 10px;border-radius:20px}
+.proj-desc{color:var(--txt2);font-size:14px;margin-bottom:14px}
+.proj-tech{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
+.tech{background:var(--bg3);color:var(--txt2);font-size:12px;padding:3px 10px;border-radius:4px}
+.proj-links{display:flex;gap:10px;flex-wrap:wrap}
+.link-btn{font-size:13px;color:var(--txt2);border:1px solid var(--border);padding:6px 16px;border-radius:6px;transition:all 0.2s}
+.link-btn:hover{border-color:var(--c1);color:var(--c1)}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.contact-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:18px;display:flex;align-items:center;gap:12px;transition:border-color 0.2s}
+.contact-card:hover{border-color:var(--c1)}
+.c-icon{width:38px;height:38px;border-radius:8px;background:rgba(127,119,221,0.15);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.c-label{font-size:11px;color:var(--txt2);margin-bottom:2px}
+.c-val{font-size:13px;font-weight:500}
+footer{text-align:center;padding:36px 40px;color:var(--txt2);font-size:13px;border-top:1px solid var(--border);max-width:860px;margin:0 auto}
+@media(max-width:700px){
+  nav{padding:0 16px}
+  .nav-links a{padding:6px 8px;font-size:11px}
+  .hero{padding:60px 20px 40px}
+  .hero h1{font-size:26px}
+  section{padding:36px 20px}
+  .skills-cols{grid-template-columns:1fr}
+  .project-card{padding:20px}
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <span class="nav-logo">Alberto <span>Vázquez</span></span>
+  <div class="nav-links">
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#formacion">Formación</a>
+    <a href="#aptitudes">Aptitudes</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</nav>
+
+<div class="hero" id="inicio">
+  <div class="avatar">AV</div>
+  <h1>Alberto <span>Vázquez</span> Rando</h1>
+  <div class="tag">Desarrollador Web Full Stack Junior</div>
+  <div class="btns">
+    <a href="https://github.com/Albertovazquez20" class="btn-p" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/alberto-v%C3%A1zquez-rando-956681295/" class="btn-o" target="_blank">LinkedIn</a>
+  </div>
+</div>
+
+<section id="sobre-mi">
+  <div class="sec-label">Sobre mí</div>
+  <div class="sobre-mi">
+    Soy Técnico Superior en Desarrollo de Aplicaciones Web (DAW) y Técnico Superior en Administración de Sistemas Informáticos en Red (ASIR), con interés en el desarrollo de software y aplicaciones web. Durante mi formación he trabajado con tecnologías como PHP, JavaScript, HTML, CSS, MySQL y Git, desarrollando proyectos académicos y ampliando mis conocimientos en desarrollo y sistemas.<br><br>
+    Actualmente busco seguir creciendo profesionalmente en el ámbito del desarrollo web, participando en proyectos que me permitan seguir aprendiendo y aportando valor.
+  </div>
+</section>
+
+<section id="formacion">
+  <div class="sec-label">Formación</div>
+  <div class="edu-item">
+    <div class="edu-dot">🎓</div>
+    <div>
+      <div class="edu-title">I.E.S. Suárez de Figueroa</div>
+      <div class="edu-sub">Técnico Superior en Desarrollo de Aplicaciones Web (DAW)</div>
+      <div class="edu-date">sept. 2024 — jun. 2026</div>
+    </div>
+  </div>
+  <div class="edu-item">
+    <div class="edu-dot">🖥️</div>
+    <div>
+      <div class="edu-title">I.E.S. Suárez de Figueroa</div>
+      <div class="edu-sub">Técnico Superior en Administración de Sistemas Informáticos en Red (ASIR)</div>
+      <div class="edu-date">sept. 2022 — jun. 2024</div>
+    </div>
+  </div>
+</section>
+
+<section id="aptitudes">
+  <div class="sec-label">Aptitudes</div>
+  <div class="skills-cols">
+    <div class="skills-group">
+      <h4>Desarrollo Web (DAW)</h4>
+      <div class="skills-wrap">
+        <span class="skill">PHP</span><span class="skill">JavaScript</span>
+        <span class="skill">HTML5</span><span class="skill">CSS3</span>
+        <span class="skill">MySQL</span><span class="skill">MariaDB</span>
+        <span class="skill">SQL</span><span class="skill">Git</span>
+        <span class="skill">GitHub</span><span class="skill">Java</span>
+        <span class="skill">POO</span><span class="skill">API REST</span>
+        <span class="skill">PDO</span><span class="skill">SPA</span>
+      </div>
+    </div>
+    <div class="skills-group">
+      <h4>Sistemas (ASIR)</h4>
+      <div class="skills-wrap">
+        <span class="skill">Linux</span><span class="skill">Windows Server</span>
+        <span class="skill">Redes</span><span class="skill">Soporte técnico</span>
+        <span class="skill">Virtualización</span><span class="skill">Directorio Activo</span>
+        <span class="skill">DNS</span><span class="skill">DHCP</span>
+        <span class="skill">Cliente-Servidor</span><span class="skill">Máquinas virtuales</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proyectos">
+  <div class="sec-label">Proyectos</div>
+  <div class="project-card">
+    <div class="proj-header">
+      <span class="proj-title">Cartel Records Games</span>
+      <span class="proj-badge">TFG — Nota: 9</span>
+    </div>
+    <p class="proj-desc">Tienda de videojuegos online desarrollada como proyecto final de grado. SPA completa con sistema de roles admin/cliente, carrito con localStorage, checkout, valoraciones, reservas de próximos lanzamientos y panel de administración.</p>
+    <div class="proj-tech">
+      <span class="tech">PHP</span><span class="tech">MySQL</span><span class="tech">JavaScript</span>
+      <span class="tech">SPA</span><span class="tech">API REST</span><span class="tech">PDO</span><span class="tech">bcrypt</span>
+    </div>
+    <div class="proj-links">
+      <a href="https://github.com/Albertovazquez20/cartel-records-games" class="link-btn" target="_blank">Ver código</a>
+      <a href="http://cartelrecords.infinityfreeapp.com" class="link-btn" target="_blank">Ver demo</a>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="sec-label">Contacto</div>
+  <div class="contact-grid">
+    <a href="https://github.com/Albertovazquez20" class="contact-card" target="_blank">
+      <div class="c-icon">🐙</div>
+      <div><div class="c-label">GitHub</div><div class="c-val">Albertovazquez20</div></div>
+    </a>
+    <a href="https://www.linkedin.com/in/alberto-v%C3%A1zquez-rando-956681295/" class="contact-card" target="_blank">
+      <div class="c-icon">💼</div>
+      <div><div class="c-label">LinkedIn</div><div class="c-val">Alberto Vázquez Rando</div></div>
+    </a>
+  </div>
+</section>
+
+<footer>Hecho con PHP, MySQL y JavaScript puro — sin frameworks</footer>
+
+<script>
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.id; });
+  navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + current); });
+});
+navLinks.forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
