@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo Legacy CSS (Versión A)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="inicial.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="c-header">
+    <div class="o-container c-header__inner">
+      <div class="c-brand">
+        <div class="c-brand__logo"></div>
+        <span>EntregableDIW</span>
+      </div>
+
+      <nav class="c-nav">
+        <ul class="c-nav__list">
+          <li><a class="c-nav__link is-active" href="#">Inicio</a></li>
+          <li><a class="c-nav__link" href="#">Servicios</a></li>
+          <li><a class="c-nav__link" href="#">Contacto</a></li>
+          <li>
+            <button class="c-btn c-btn--primary" type="button">Login</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="c-hero">
+    <div class="o-container o-stack">
+      <h1 class="c-hero__title">Bienvenido a la demo</h1>
+      <p class="c-hero__lead">
+        Esta página sirve para comprobar que el CSS original y la versión transformada a SCSS
+        mantienen el mismo resultado visual.
+      </p>
+      <div class="o-cluster">
+        <button class="c-btn c-btn--primary" type="button">Acción principal</button>
+        <button class="c-btn c-btn--ghost" type="button">Acción secundaria</button>
+        <button class="c-btn c-btn--danger" type="button">Eliminar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARDS -->
+  <section class="o-container o-stack u-mt-4">
+    <h2>Tarjetas</h2>
+
+    <div class="o-grid o-grid--3 u-mt-2">
+
+      <article class="c-card">
+        <span class="c-badge c-badge--primary">Nuevo</span>
+        <h3 class="c-card__title">Card principal</h3>
+        <p class="c-card__meta">Autor · 12 Feb 2026</p>
+        <div class="c-card__body">
+          <p>Contenido de ejemplo dentro de la tarjeta.</p>
+        </div>
+      </article>
+
+      <article class="c-card">
+        <span class="c-badge c-badge--accent">Destacado</span>
+        <h3 class="c-card__title">Otra tarjeta</h3>
+        <p class="c-card__meta">Autor · 10 Feb 2026</p>
+        <div class="c-card__body">
+          <p>Más contenido de prueba para comprobar espaciados y bordes.</p>
+        </div>
+      </article>
+
+      <article class="c-card is-loading">
+        <h3 class="c-card__title">Cargando…</h3>
+        <p class="c-card__meta">Estado <code>.is-loading</code></p>
+        <div class="c-card__body">
+          <p>Ejemplo de estado simple (sin animaciones).</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- MEDIA OBJECT -->
+  <section class="o-container o-stack u-mt-4">
+    <h2>Media Object</h2>
+
+    <div class="o-media">
+      <div class="o-media__img"></div>
+      <div class="o-media__body">
+        <h3>Título del elemento</h3>
+        <p>Descripción asociada al objeto multimedia.</p>
+        <small>Texto secundario</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULARIO -->
+  <section class="o-container o-stack u-mt-4">
+    <h2>Formulario</h2>
+
+    <form class="c-form o-stack" action="#" method="post">
+      <div class="c-field">
+        <label class="c-label" for="name">Nombre</label>
+        <input class="c-input" id="name" name="name" type="text" placeholder="Tu nombre">
+        <small class="c-help">Introduce tu nombre completo.</small>
+      </div>
+
+      <div class="c-field is-invalid">
+        <label class="c-label" for="email">Email</label>
+        <input class="c-input" id="email" name="email" type="email" placeholder="correo@ejemplo.com">
+        <span class="c-error">Email inválido</span>
+      </div>
+
+      <div class="o-cluster">
+        <button type="submit" class="c-btn c-btn--primary">Enviar</button>
+        <button type="reset" class="c-btn c-btn--ghost">Cancelar</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- TABLA -->
+  <section class="o-container o-stack u-mt-4">
+    <h2>Tabla</h2>
+
+    <table class="c-table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Rol</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ana</td>
+          <td>Admin</td>
+          <td><span class="c-badge c-badge--primary">Activo</span></td>
+        </tr>
+        <tr>
+          <td>Luis</td>
+          <td>Editor</td>
+          <td><span class="c-badge">Pendiente</span></td>
+        </tr>
+        <tr>
+          <td>María</td>
+          <td>Usuario</td>
+          <td><span class="c-badge c-badge--accent">Nuevo</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="c-footer">
+    <div class="o-container u-text-center">
+      <p>© 2026 - Demo ITCSS + SCSS</p>
+    </div>
+  </footer>
+
+  <hr>
+
+  <!-- DARK MODE PREVIEW -->
+  <section class="u-dark-mode u-p-4 u-mt-4">
+    <div class="o-container o-stack">
+      <h2>Vista modo oscuro</h2>
+      <p>Sección envuelta en <code>.u-dark-mode</code> para comprobar el tema.</p>
+      <div class="c-card">
+        <h3 class="c-card__title">Card en modo oscuro</h3>
+        <p class="c-card__meta">Texto secundario</p>
+        <div class="c-card__body">
+          <p>La card y el formulario adaptan fondo/borde en modo oscuro.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
