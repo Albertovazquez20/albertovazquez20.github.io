@@ -46,7 +46,10 @@ section{padding:50px 40px;max-width:860px;margin:0 auto;scroll-margin-top:calc(v
 .skills-wrap{display:flex;flex-wrap:wrap;gap:8px}
 .skill{background:var(--bg3);border:1px solid var(--border);color:var(--txt2);padding:5px 14px;border-radius:6px;font-size:12px;transition:border-color 0.2s,color 0.2s}
 .skill:hover{border-color:var(--c1);color:var(--c1)}
-.project-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:28px;margin-bottom:16px;transition:border-color 0.2s}
+.project-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:28px;margin-bottom:16px;transition:border-color 0.2s;overflow:hidden}
+.proj-img{margin:-28px -28px 20px;display:block;border-bottom:1px solid var(--border)}
+.proj-img img{width:100%;height:auto;display:block;aspect-ratio:16/7;object-fit:cover;object-position:top}
+.proj-badge-main{background:var(--c1);color:#fff;font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px}
 .project-card:hover{border-color:var(--c1)}
 .proj-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px;flex-wrap:wrap}
 .proj-title{font-size:17px;font-weight:600}
@@ -91,7 +94,7 @@ footer{text-align:center;padding:36px 40px;color:var(--txt2);font-size:13px;bord
 <div class="hero" id="inicio">
   <div class="avatar">AV</div>
   <h1>Alberto <span>Vázquez</span> Rando</h1>
-  <div class="tag">Desarrollador Web Full Stack Junior</div>
+  <div class="tag">Desarrollador Web Junior especializado en PHP y JavaScript</div>
   <div class="btns">
     <a href="https://github.com/Albertovazquez20" class="btn-p" target="_blank">GitHub</a>
     <a href="https://www.linkedin.com/in/alberto-v%C3%A1zquez-rando-956681295/" class="btn-o" target="_blank">LinkedIn</a>
@@ -158,9 +161,15 @@ footer{text-align:center;padding:36px 40px;color:var(--txt2);font-size:13px;bord
   <div class="sec-label">Proyectos</div>
 
   <div class="project-card">
+    <a href="https://xn--josecanobarbera-ipb.com/" class="proj-img" target="_blank">
+      <img src="img/barberia.png" alt="Web de Jose Cano Barbería">
+    </a>
     <div class="proj-header">
       <span class="proj-title">Jose Cano Barbería</span>
-      <span class="proj-badge">Cliente real — En producción</span>
+      <span style="display:flex;gap:8px;flex-wrap:wrap">
+        <span class="proj-badge-main">⭐ Proyecto principal</span>
+        <span class="proj-badge">Cliente real — En producción</span>
+      </span>
     </div>
     <p class="proj-desc">Sistema de reservas online para una barbería real, desplegado en producción. Los clientes reservan cita eligiendo servicio, día y hora en un calendario interactivo, y el administrador gestiona citas, horarios semanales, días bloqueados y clientes desde un panel propio. Incluye login con Google OAuth y notificaciones automáticas por email.</p>
     <div class="proj-tech">
@@ -174,6 +183,9 @@ footer{text-align:center;padding:36px 40px;color:var(--txt2);font-size:13px;bord
   </div>
 
   <div class="project-card">
+    <a href="https://github.com/Albertovazquez20/cartel-records-games" class="proj-img" target="_blank">
+      <img src="img/cartelrecords.png" alt="Web de Cartel Records Games">
+    </a>
     <div class="proj-header">
       <span class="proj-title">Cartel Records Games</span>
       <span class="proj-badge">TFG — Nota: 9</span>
@@ -204,7 +216,7 @@ footer{text-align:center;padding:36px 40px;color:var(--txt2);font-size:13px;bord
   </div>
 </section>
 
-<footer>Hecho con PHP, MySQL y JavaScript puro — sin frameworks</footer>
+<footer>Desarrollado con PHP, MySQL y JavaScript</footer>
 
 <script>
 const sections = document.querySelectorAll('section[id]');
