@@ -3,7 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alberto Vázquez Rando</title>
+
+<title>Alberto Vázquez Rando — Desarrollador Web</title>
+<meta name="description" content="Portfolio de Alberto Vázquez Rando, desarrollador web especializado en PHP, JavaScript y MySQL. Técnico Superior en DAW y ASIR. Proyectos: sistema de reservas para barbería y tienda online de videojuegos.">
+<meta name="keywords" content="Alberto Vázquez Rando, desarrollador web, portfolio, PHP, JavaScript, MySQL, DAW, ASIR, SPA, API REST, Badajoz">
+<meta name="author" content="Alberto Vázquez Rando">
+<meta name="theme-color" content="#0f0e1a">
+<link rel="canonical" href="https://albertovazquez20.github.io/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Alberto Vázquez Rando">
+<meta property="og:url" content="https://albertovazquez20.github.io/">
+<meta property="og:title" content="Alberto Vázquez Rando — Desarrollador Web">
+<meta property="og:description" content="Desarrollador web con PHP, JavaScript y MySQL. Técnico Superior en DAW y ASIR. Descubre mis proyectos en producción.">
+<meta property="og:image" content="https://albertovazquez20.github.io/img/foto.jpg">
+<meta property="og:image:alt" content="Alberto Vázquez Rando">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Alberto Vázquez Rando — Desarrollador Web">
+<meta name="twitter:description" content="Desarrollador web con PHP, JavaScript y MySQL. Técnico Superior en DAW y ASIR. Descubre mis proyectos en producción.">
+<meta name="twitter:image" content="https://albertovazquez20.github.io/img/foto.jpg">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%230f0e1a%22%2F%3E%3Crect%20x%3D%221.5%22%20y%3D%221.5%22%20width%3D%2261%22%20height%3D%2261%22%20rx%3D%2212.5%22%20fill%3D%22none%22%20stroke%3D%22%237F77DD%22%20stroke-width%3D%223%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2243.5%22%20font-family%3D%22Segoe%20UI%2CHelvetica%2CArial%2Csans-serif%22%20font-size%3D%2227%22%20font-weight%3D%22700%22%20letter-spacing%3D%221%22%20fill%3D%22%237F77DD%22%20text-anchor%3D%22middle%22%3EAV%3C%2Ftext%3E%3C%2Fsvg%3E" type="image/svg+xml">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -11,76 +36,130 @@
   --c1:#7F77DD;--c2:#534AB7;
   --txt:#f0effe;--txt2:#b0a8f0;--txt3:#7f77dd;
   --border:rgba(127,119,221,0.2);
+  --c1-soft:rgba(127,119,221,0.15);
   --nav-h:56px;
+  --maxw:860px;
+  --ease:0.2s ease;
+  color-scheme:dark;
 }
-body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;padding-top:var(--nav-h)}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;padding-top:var(--nav-h);-webkit-font-smoothing:antialiased}
 a{color:var(--c1);text-decoration:none}
-nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(15,14,26,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 40px}
+img{max-width:100%}
+:focus-visible{outline:2px solid var(--c1);outline-offset:3px;border-radius:4px}
+
+/* ── Navegación ───────────────────────────────────────────────────────────── */
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(15,14,26,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 40px}
 .nav-logo{font-size:15px;font-weight:600;color:var(--txt)}
 .nav-logo span{color:var(--c1)}
 .nav-links{display:flex;gap:4px}
-.nav-links a{font-size:13px;color:var(--txt2);padding:6px 14px;border-radius:6px;transition:background 0.2s,color 0.2s}
-.nav-links a:hover,.nav-links a.active{background:rgba(127,119,221,0.15);color:var(--c1)}
-.hero{padding:80px 40px 50px;max-width:860px;margin:0 auto;text-align:center}
-.avatar{width:88px;height:88px;border-radius:50%;background:var(--bg3);border:2px solid var(--c1);display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:600;color:var(--c1);margin:0 auto 24px}
+.nav-links a{font-size:13px;color:var(--txt2);padding:6px 14px;border-radius:6px;transition:background var(--ease),color var(--ease)}
+.nav-links a:hover,.nav-links a.active{background:var(--c1-soft);color:var(--c1)}
+
+/* ── Hero ─────────────────────────────────────────────────────────────────── */
+.hero{padding:80px 40px 50px;max-width:var(--maxw);margin:0 auto;text-align:center}
+.avatar{width:120px;height:120px;border-radius:50%;border:2px solid var(--c1);margin:0 auto 24px;overflow:hidden;background:var(--bg3)}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
 .hero h1{font-size:34px;font-weight:600;margin-bottom:8px}
 .hero h1 span{color:var(--c1)}
-.tag{display:inline-block;background:rgba(127,119,221,0.15);border:1px solid var(--border);color:var(--txt2);font-size:13px;padding:4px 16px;border-radius:20px;margin-bottom:24px}
+.tag{display:inline-block;background:var(--c1-soft);border:1px solid var(--border);color:var(--txt2);font-size:13px;padding:4px 16px;border-radius:20px;margin-bottom:24px}
 .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
-.btn-p{background:var(--c1);color:#fff;padding:10px 24px;border-radius:8px;font-size:14px;font-weight:500}
+.btn-p,.btn-o{padding:10px 24px;border-radius:8px;font-size:14px;transition:background var(--ease),border-color var(--ease),color var(--ease)}
+.btn-p{background:var(--c1);color:#fff;font-weight:500}
 .btn-p:hover{background:var(--c2);color:#fff}
-.btn-o{border:1px solid var(--border);color:var(--txt2);padding:10px 24px;border-radius:8px;font-size:14px}
+.btn-o{border:1px solid var(--border);color:var(--txt2)}
 .btn-o:hover{border-color:var(--c1);color:var(--c1)}
-section{padding:50px 40px;max-width:860px;margin:0 auto;scroll-margin-top:calc(var(--nav-h) + 16px)}
-.sec-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--txt3);margin-bottom:24px;display:flex;align-items:center;gap:10px}
+
+/* ── Secciones ────────────────────────────────────────────────────────────── */
+section{padding:50px 40px;max-width:var(--maxw);margin:0 auto;scroll-margin-top:calc(var(--nav-h) + 16px)}
+.sec-label{font-size:11px;font-weight:400;letter-spacing:2px;text-transform:uppercase;color:var(--txt3);margin-bottom:24px;display:flex;align-items:center;gap:10px}
 .sec-label::after{content:'';flex:1;height:1px;background:var(--border)}
+
 .sobre-mi{color:var(--txt2);font-size:15px;line-height:1.8;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px 28px}
+
+/* ── Formación ────────────────────────────────────────────────────────────── */
 .edu-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}
 .edu-item:last-child{border-bottom:none}
-.edu-dot{width:40px;height:40px;border-radius:8px;background:rgba(127,119,221,0.15);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.edu-dot{width:40px;height:40px;border-radius:8px;background:var(--c1-soft);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
 .edu-title{font-size:15px;font-weight:600;margin-bottom:2px}
 .edu-sub{font-size:13px;color:var(--txt2);margin-bottom:4px}
 .edu-date{font-size:12px;color:var(--txt3)}
+
+/* ── Aptitudes ────────────────────────────────────────────────────────────── */
 .skills-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .skills-group h4{font-size:13px;color:var(--txt3);margin-bottom:12px;font-weight:500}
 .skills-wrap{display:flex;flex-wrap:wrap;gap:8px}
-.skill{background:var(--bg3);border:1px solid var(--border);color:var(--txt2);padding:5px 14px;border-radius:6px;font-size:12px;transition:border-color 0.2s,color 0.2s}
+.skill{background:var(--bg3);border:1px solid var(--border);color:var(--txt2);padding:5px 14px;border-radius:6px;font-size:12px;transition:border-color var(--ease),color var(--ease)}
 .skill:hover{border-color:var(--c1);color:var(--c1)}
-.project-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:28px;margin-bottom:16px;transition:border-color 0.2s;overflow:hidden}
-.proj-img{margin:-28px -28px 20px;display:block;border-bottom:1px solid var(--border)}
-.proj-img img{width:100%;height:auto;display:block;aspect-ratio:16/7;object-fit:cover;object-position:top}
-.proj-badge-main{background:var(--c1);color:#fff;font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px}
+
+/* ── Proyectos ────────────────────────────────────────────────────────────── */
+.project-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:28px;margin-bottom:16px;transition:border-color var(--ease);overflow:hidden}
 .project-card:hover{border-color:var(--c1)}
+.proj-img{margin:-28px -28px 20px;display:block;border-bottom:1px solid var(--border);overflow:hidden}
+.proj-img img{width:100%;height:auto;display:block;aspect-ratio:16/7;object-fit:cover;object-position:top;transition:transform 0.45s cubic-bezier(0.2,0.6,0.2,1)}
+.project-card:hover .proj-img img{transform:scale(1.03)}
 .proj-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px;flex-wrap:wrap}
 .proj-title{font-size:17px;font-weight:600}
-.proj-badge{background:rgba(127,119,221,0.15);border:1px solid var(--border);color:var(--txt3);font-size:11px;padding:3px 10px;border-radius:20px}
+.proj-badges{display:flex;gap:8px;flex-wrap:wrap}
+.proj-badge{background:var(--c1-soft);border:1px solid var(--border);color:var(--txt3);font-size:11px;padding:3px 10px;border-radius:20px}
+.proj-badge-main{background:var(--c1);color:#fff;font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px}
 .proj-desc{color:var(--txt2);font-size:14px;margin-bottom:14px}
 .proj-tech{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
 .tech{background:var(--bg3);color:var(--txt2);font-size:12px;padding:3px 10px;border-radius:4px}
 .proj-links{display:flex;gap:10px;flex-wrap:wrap}
-.link-btn{font-size:13px;color:var(--txt2);border:1px solid var(--border);padding:6px 16px;border-radius:6px;transition:all 0.2s}
+.link-btn{font-size:13px;color:var(--txt2);border:1px solid var(--border);padding:6px 16px;border-radius:6px;transition:border-color var(--ease),color var(--ease)}
 .link-btn:hover{border-color:var(--c1);color:var(--c1)}
+
+/* ── Contacto ─────────────────────────────────────────────────────────────── */
 .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
-.contact-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:18px;display:flex;align-items:center;gap:12px;transition:border-color 0.2s}
+.contact-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:18px;display:flex;align-items:center;gap:12px;transition:border-color var(--ease)}
 .contact-card:hover{border-color:var(--c1)}
-.c-icon{width:38px;height:38px;border-radius:8px;background:rgba(127,119,221,0.15);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.c-icon{width:38px;height:38px;border-radius:8px;background:var(--c1-soft);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
 .c-label{font-size:11px;color:var(--txt2);margin-bottom:2px}
-.c-val{font-size:13px;font-weight:500}
-footer{text-align:center;padding:36px 40px;color:var(--txt2);font-size:13px;border-top:1px solid var(--border);max-width:860px;margin:0 auto}
+.c-val{font-size:13px;font-weight:500;word-break:break-word}
+
+footer{text-align:center;padding:36px 40px;color:var(--txt2);font-size:13px;border-top:1px solid var(--border);max-width:var(--maxw);margin:0 auto}
+
+/* ── Animaciones de aparición ─────────────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.is-visible{opacity:1;transform:none}
+.hero{animation:fadeUp 0.7s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+  .project-card:hover .proj-img img{transform:none}
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+@media(max-width:900px){
+  nav{padding:0 24px}
+  .hero{padding:70px 24px 44px}
+  section{padding:44px 24px}
+  footer{padding:32px 24px}
+}
 @media(max-width:700px){
   nav{padding:0 16px}
+  .nav-links{gap:2px}
   .nav-links a{padding:6px 8px;font-size:11px}
   .hero{padding:60px 20px 40px}
   .hero h1{font-size:26px}
   section{padding:36px 20px}
   .skills-cols{grid-template-columns:1fr}
   .project-card{padding:20px}
+  .proj-img{margin:-20px -20px 18px}
+}
+@media(max-width:430px){
+  .nav-logo{font-size:13px}
+  .nav-links a{padding:6px 6px;font-size:10.5px}
+  .hero h1{font-size:23px}
+  .contact-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<nav id="navbar">
+<nav>
   <span class="nav-logo">Alberto <span>Vázquez</span></span>
   <div class="nav-links">
     <a href="#sobre-mi">Sobre mí</a>
@@ -91,28 +170,32 @@ footer{text-align:center;padding:36px 40px;color:var(--txt2);font-size:13px;bord
   </div>
 </nav>
 
-<div class="hero" id="inicio">
-  <div class="avatar">AV</div>
-  <h1>Alberto <span>Vázquez</span> Rando</h1>
-  <div class="tag">Desarrollador Web Junior especializado en PHP y JavaScript</div>
-  <div class="btns">
-    <a href="https://github.com/Albertovazquez20" class="btn-p" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/alberto-v%C3%A1zquez-rando-956681295/" class="btn-o" target="_blank">LinkedIn</a>
+<header class="hero" id="inicio">
+  <div class="avatar">
+    <img src="img/foto.jpg" alt="Alberto Vázquez Rando" width="120" height="120" fetchpriority="high">
   </div>
-</div>
+  <h1>Alberto <span>Vázquez</span> Rando</h1>
+  <p class="tag">Desarrollador Web | PHP · JavaScript · MySQL</p>
+  <div class="btns">
+    <a href="https://github.com/Albertovazquez20" class="btn-p" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://www.linkedin.com/in/alberto-v%C3%A1zquez-rando-956681295/" class="btn-o" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+</header>
 
-<section id="sobre-mi">
-  <div class="sec-label">Sobre mí</div>
+<main>
+
+<section id="sobre-mi" class="reveal">
+  <h2 class="sec-label">Sobre mí</h2>
   <div class="sobre-mi">
     Soy Técnico Superior en Desarrollo de Aplicaciones Web (DAW) y Técnico Superior en Administración de Sistemas Informáticos en Red (ASIR), con interés en el desarrollo de software y aplicaciones web. Durante mi formación he trabajado con tecnologías como PHP, JavaScript, HTML, CSS, MySQL y Git, desarrollando proyectos académicos y ampliando mis conocimientos en desarrollo y sistemas.<br><br>
     Actualmente busco seguir creciendo profesionalmente en el ámbito del desarrollo web, participando en proyectos que me permitan seguir aprendiendo y aportando valor.
   </div>
 </section>
 
-<section id="formacion">
-  <div class="sec-label">Formación</div>
+<section id="formacion" class="reveal">
+  <h2 class="sec-label">Formación</h2>
   <div class="edu-item">
-    <div class="edu-dot">🎓</div>
+    <div class="edu-dot" aria-hidden="true">🎓</div>
     <div>
       <div class="edu-title">I.E.S. Suárez de Figueroa</div>
       <div class="edu-sub">Técnico Superior en Desarrollo de Aplicaciones Web (DAW)</div>
@@ -120,7 +203,7 @@ footer{text-align:center;padding:36px 40px;color:var(--txt2);font-size:13px;bord
     </div>
   </div>
   <div class="edu-item">
-    <div class="edu-dot">🖥️</div>
+    <div class="edu-dot" aria-hidden="true">🖥️</div>
     <div>
       <div class="edu-title">I.E.S. Suárez de Figueroa</div>
       <div class="edu-sub">Técnico Superior en Administración de Sistemas Informáticos en Red (ASIR)</div>
@@ -129,8 +212,8 @@ footer{text-align:center;padding:36px 40px;color:var(--txt2);font-size:13px;bord
   </div>
 </section>
 
-<section id="aptitudes">
-  <div class="sec-label">Aptitudes</div>
+<section id="aptitudes" class="reveal">
+  <h2 class="sec-label">Aptitudes</h2>
   <div class="skills-cols">
     <div class="skills-group">
       <h4>Desarrollo Web (DAW)</h4>
@@ -157,38 +240,40 @@ footer{text-align:center;padding:36px 40px;color:var(--txt2);font-size:13px;bord
   </div>
 </section>
 
-<section id="proyectos">
-  <div class="sec-label">Proyectos</div>
+<section id="proyectos" class="reveal">
+  <h2 class="sec-label">Proyectos</h2>
 
-  <div class="project-card">
-    <a href="https://xn--josecanobarbera-ipb.com/" class="proj-img" target="_blank">
-      <img src="img/barberia.png" alt="Web de Jose Cano Barbería">
+  <article class="project-card">
+    <a href="https://xn--josecanobarbera-ipb.com/" class="proj-img" target="_blank" rel="noopener noreferrer" aria-label="Abrir la web de Jose Cano Barbería">
+      <img src="img/barberia.png" alt="Página principal de la web de Jose Cano Barbería" width="1902" height="908" loading="lazy" decoding="async">
     </a>
     <div class="proj-header">
-      <span class="proj-title">Jose Cano Barbería</span>
-      <span style="display:flex;gap:8px;flex-wrap:wrap">
+      <h3 class="proj-title">Jose Cano Barbería</h3>
+      <span class="proj-badges">
         <span class="proj-badge-main">⭐ Proyecto principal</span>
-        <span class="proj-badge">Cliente real — En producción</span>
+        <span class="proj-badge">2026 · Cliente real — En producción</span>
       </span>
     </div>
-    <p class="proj-desc">Sistema de reservas online para una barbería real, desplegado en producción. Los clientes reservan cita eligiendo servicio, día y hora en un calendario interactivo, y el administrador gestiona citas, horarios semanales, días bloqueados y clientes desde un panel propio. Incluye login con Google OAuth y notificaciones automáticas por email.</p>
+    <p class="proj-desc">Sistema de reservas online para una barbería real, desplegado en producción. Los clientes reservan cita eligiendo servicio, día y hora en un calendario interactivo, y el administrador gestiona citas, horarios semanales, días bloqueados y clientes desde un panel propio. Incluye autenticación mediante Google OAuth y notificaciones automáticas por email.</p>
     <div class="proj-tech">
       <span class="tech">PHP</span><span class="tech">MySQL</span><span class="tech">JavaScript</span>
       <span class="tech">SPA</span><span class="tech">Google OAuth</span><span class="tech">PHPMailer</span><span class="tech">PDO</span>
     </div>
     <div class="proj-links">
-      <a href="https://github.com/Albertovazquez20/jose-cano-barberia" class="link-btn" target="_blank">Ver proyecto</a>
-      <a href="https://xn--josecanobarbera-ipb.com/" class="link-btn" target="_blank">Ver web</a>
+      <a href="https://github.com/Albertovazquez20/jose-cano-barberia" class="link-btn" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+      <a href="https://xn--josecanobarbera-ipb.com/" class="link-btn" target="_blank" rel="noopener noreferrer">Ver web</a>
     </div>
-  </div>
+  </article>
 
-  <div class="project-card">
-    <a href="https://github.com/Albertovazquez20/cartel-records-games" class="proj-img" target="_blank">
-      <img src="img/cartelrecords.png" alt="Web de Cartel Records Games">
+  <article class="project-card">
+    <a href="https://github.com/Albertovazquez20/cartel-records-games" class="proj-img" target="_blank" rel="noopener noreferrer" aria-label="Abrir el repositorio de Cartel Records Games">
+      <img src="img/cartelrecords.png" alt="Página principal de la tienda Cartel Records Games" width="1909" height="911" loading="lazy" decoding="async">
     </a>
     <div class="proj-header">
-      <span class="proj-title">Cartel Records Games</span>
-      <span class="proj-badge">TFG — Nota: 9</span>
+      <h3 class="proj-title">Cartel Records Games</h3>
+      <span class="proj-badges">
+        <span class="proj-badge">TFG 2026 · Nota: 9</span>
+      </span>
     </div>
     <p class="proj-desc">Tienda de videojuegos online desarrollada como proyecto final de grado. SPA completa con sistema de roles admin/cliente, carrito con localStorage, checkout, valoraciones, reservas de próximos lanzamientos y panel de administración.</p>
     <div class="proj-tech">
@@ -196,42 +281,93 @@ footer{text-align:center;padding:36px 40px;color:var(--txt2);font-size:13px;bord
       <span class="tech">SPA</span><span class="tech">API REST</span><span class="tech">PDO</span><span class="tech">bcrypt</span>
     </div>
     <div class="proj-links">
-      <a href="https://github.com/Albertovazquez20/cartel-records-games" class="link-btn" target="_blank">Ver código</a>
-      <a href="http://cartelrecords.infinityfreeapp.com" class="link-btn" target="_blank">Ver demo</a>
+      <a href="https://github.com/Albertovazquez20/cartel-records-games" class="link-btn" target="_blank" rel="noopener noreferrer">Ver código</a>
+      <a href="https://cartelrecords.infinityfreeapp.com" class="link-btn" target="_blank" rel="noopener noreferrer">Ver demo</a>
     </div>
-  </div>
+  </article>
 </section>
 
-<section id="contacto">
-  <div class="sec-label">Contacto</div>
+<section id="contacto" class="reveal">
+  <h2 class="sec-label">Contacto</h2>
   <div class="contact-grid">
-    <a href="https://github.com/Albertovazquez20" class="contact-card" target="_blank">
-      <div class="c-icon">🐙</div>
+    <a href="https://github.com/Albertovazquez20" class="contact-card" target="_blank" rel="noopener noreferrer">
+      <div class="c-icon" aria-hidden="true">🐙</div>
       <div><div class="c-label">GitHub</div><div class="c-val">Albertovazquez20</div></div>
     </a>
-    <a href="https://www.linkedin.com/in/alberto-v%C3%A1zquez-rando-956681295/" class="contact-card" target="_blank">
-      <div class="c-icon">💼</div>
+    <a href="https://www.linkedin.com/in/alberto-v%C3%A1zquez-rando-956681295/" class="contact-card" target="_blank" rel="noopener noreferrer">
+      <div class="c-icon" aria-hidden="true">💼</div>
       <div><div class="c-label">LinkedIn</div><div class="c-val">Alberto Vázquez Rando</div></div>
+    </a>
+    <a href="mailto:al.vazquezrando@gmail.com" class="contact-card">
+      <div class="c-icon" aria-hidden="true">📧</div>
+      <div><div class="c-label">Email</div><div class="c-val">al.vazquezrando@gmail.com</div></div>
     </a>
   </div>
 </section>
 
-<footer>Desarrollado con PHP, MySQL y JavaScript</footer>
+</main>
+
+<footer>Diseñado y desarrollado por Alberto Vázquez Rando · © 2026</footer>
 
 <script>
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.id; });
-  navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + current); });
-});
-navLinks.forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+(function () {
+  'use strict';
+
+  var sections = Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+
+  // ── Enlace activo en la navegación (throttle con requestAnimationFrame) ────
+  var ticking = false;
+
+  function updateActiveLink() {
+    var current = '';
+    for (var i = 0; i < sections.length; i++) {
+      if (sections[i].getBoundingClientRect().top <= 140) current = sections[i].id;
+    }
+    for (var j = 0; j < navLinks.length; j++) {
+      navLinks[j].classList.toggle('active', navLinks[j].getAttribute('href') === '#' + current);
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(updateActiveLink);
+    }
+  }, { passive: true });
+
+  updateActiveLink();
+
+  // ── Scroll suave al pulsar un enlace del menú ─────────────────────────────
+  navLinks.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var target = document.querySelector(link.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+      history.replaceState(null, '', link.getAttribute('href'));
+    });
   });
-});
+
+  // ── Aparición progresiva de las secciones ─────────────────────────────────
+  var revealables = document.querySelectorAll('.reveal');
+
+  if (!('IntersectionObserver' in window)) {
+    revealables.forEach(function (el) { el.classList.add('is-visible'); });
+    return;
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  revealables.forEach(function (el) { observer.observe(el); });
+})();
 </script>
 </body>
 </html>
